@@ -96,8 +96,17 @@
       <h2>101 Indian Recipes</h2>
       <p>Instant downloadable PDF</p>
       <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <button class="buy-btn" onclick="openRazorpay('101 Indian Recipes', 19900)">Buy Direct ₹199</button>
-        <a href="https://www.amazon.in/dp/EXAMPLE1" class="buy-btn" style="background: #ff9900;">Buy on Amazon</a>
+        <div className="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_QiyagdWzLNtwWe/view" data-text="Pay Now" data-color="#528FF0" data-size="large">
+  <script>
+    (function(){
+      var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+      if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+      s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+      rzp && rzp.init && rzp.init()}})();
+  </script>
+</div>
+    
+        <a href="https://www.amazon.in/START-SCALE-Complete-Ecommerce-Playbook-ebook/dp/B0FCCRLQFD/ref=sr_1_1?crid=2E6BAKMNC1QY1&dib=eyJ2IjoiMSJ9.4F9G8eaCI544JzfntPUhJqiEqhPAhYmgSZ9IG65wDxk.l4F8rI4nzWJ-wF3fPetn0ZQh1PucXjrtigZpHsMDRbk&dib_tag=se&keywords=rohit+gunda&qid=1750319843&sprefix=%2Caps%2C267&sr=8-1" class="buy-btn" style="background: #ff9900;">Buy on Amazon</a>
       </div>
     </div>
     <div class="product" data-aos="zoom-in">
