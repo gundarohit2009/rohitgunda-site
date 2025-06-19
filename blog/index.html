@@ -24,6 +24,7 @@
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
+      position: relative;
     }
     .blog-box h2 {
       margin-top: 0;
@@ -38,6 +39,21 @@
       text-align: center;
       margin-top: 40px;
     }
+    .tag {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+    .meta-info {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -45,12 +61,18 @@
   <h1>📚 Rohit Gunda's Blog</h1>
 
   <div class="blog-box">
+    <div class="tag">🔥 Trending</div>
     <h2>📘 Start to Scale – India’s Ultimate eCommerce Book</h2>
     <p>A practical guide to start and scale your online business in India, covering marketplaces, payments, shipping and more.</p>
+    <div class="meta-info">
+      👁️ <span id="views-1">0</span> Live Views &nbsp;|&nbsp;
+      ✅ <span id="reads-1">0</span> Reads
+    </div>
     <a href="start-to-scale-ebook-guide.html">Read Full Post →</a>
   </div>
 
-  <!-- USE THIS AS NEW BLOG REFERENCE <div class="blog-box">
+  <!-- USE THIS AS NEW BLOG REFERENCE
+  <div class="blog-box">
     <h2>🚀 How to Launch a Digital Product in India</h2>
     <p>Step-by-step approach to building, pricing, and marketing your own digital products using free tools.</p>
     <a href="how-to-launch-digital-product.html">Read Full Post →</a>
@@ -59,6 +81,12 @@
   <div class="home-btn">
     <a href="/" style="color:#ff4b91;">← Back to Home</a>
   </div>
+
+  <script>
+    // Simulate live view & read count
+    document.getElementById("views-1").textContent = Math.floor(Math.random() * 20) + 15;
+    document.getElementById("reads-1").textContent = Math.floor(Math.random() * 2000) + 1500;
+  </script>
 
 </body>
 </html>
