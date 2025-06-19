@@ -6,6 +6,7 @@
   <title>Rohit Gunda | Digital Products</title>
   <meta name="description" content="Buy eBooks, courses, and digital tools by Rohit Gunda. Instant delivery after secure payment." />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -94,19 +95,25 @@
       <img src="https://via.placeholder.com/300x200?text=eBook+1" alt="eBook 1" />
       <h2>101 Indian Recipes</h2>
       <p>Instant downloadable PDF</p>
-      <a href="https://rzp.io/l/recipebook" class="buy-btn">Buy Now ₹199</a>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="buy-btn" onclick="openRazorpay('101 Indian Recipes', 19900)">Buy Direct ₹199</button>
+        <a href="https://www.amazon.in/dp/EXAMPLE1" class="buy-btn" style="background: #ff9900;">Buy on Amazon</a>
+      </div>
     </div>
     <div class="product" data-aos="zoom-in">
       <img src="https://via.placeholder.com/300x200?text=eCommerce+Guide" alt="eCommerce Guide" />
       <h2>eCommerce Starter Guide</h2>
       <p>Step-by-step guide to launch your business</p>
-      <a href="https://rzp.io/l/ecomguide" class="buy-btn">Buy Now ₹299</a>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="buy-btn" onclick="openRazorpay('eCommerce Starter Guide', 29900)">Buy Direct ₹299</button>
+        <a href="https://www.amazon.in/dp/EXAMPLE2" class="buy-btn" style="background: #ff9900;">Buy on Amazon</a>
+      </div>
     </div>
     <div class="product" data-aos="zoom-in">
       <img src="https://via.placeholder.com/300x200?text=ChatGPT+Prompts" alt="Prompt Pack" />
       <h2>ChatGPT Prompt Pack</h2>
       <p>500+ Prompts for Business & Content</p>
-      <a href="https://rzp.io/l/chatgptbundle" class="buy-btn">Buy Now ₹149</a>
+      <button class="buy-btn" onclick="openRazorpay('ChatGPT Prompt Pack', 14900)">Buy Now ₹149</button>
     </div>
   </section>
 
@@ -162,7 +169,7 @@
       <a href="#">Read More</a>
     </div>
     <div class="blog-box" data-aos="fade-up">
-      <h3>🤖 How to Use ChatGPT for Profits</h3>
+      <h3>🤖 How to Use ChatGPT for Profits</h>
       <p>Discover money-making use cases of AI tools and how you can start today.</p>
       <a href="#">Read More</a>
     </div>
@@ -174,6 +181,31 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+    function openRazorpay(productName, amountInPaisa) {
+      var options = {
+        key: "rzp_test_YourKeyHere", // replace with your Razorpay key
+        amount: amountInPaisa,
+        currency: "INR",
+        name: "Rohit Gunda",
+        description: productName,
+        image: "https://rohitgunda.com/logo.png", // optional
+        handler: function (response) {
+          alert("Payment successful! Razorpay ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "",
+          email: "",
+          contact: ""
+        },
+        theme: {
+          color: "#ff4b91"
+        }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
 </body>
 </html>
